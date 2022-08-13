@@ -1,3 +1,4 @@
+
 import './App.css';
 import OpeningModal from './components/OpeningModal';
 import Tables from './components/Tables';
@@ -5,8 +6,9 @@ import Tables from './components/Tables';
 function App() {
   return (
     <div className="App">
-     <OpeningModal/>
-     <Tables/>
+      <OpeningModal />
+      <Tables />
+   
     </div>
   );
 }

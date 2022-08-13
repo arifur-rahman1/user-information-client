@@ -22,7 +22,7 @@ const OpeningModal = () => {
     return (
         <div className='grid justify-center mt-48'>
 
-            <label for="my-modal-4" class="btn modal-button btn-info ">open modal</label>
+            <label for="my-modal-4" class="btn modal-button btn-info ">Open Form</label>
 
 
             <input type="checkbox" id="my-modal-4" class="modal-toggle" />
