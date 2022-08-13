@@ -11,7 +11,7 @@ const TableData = ({ i, info, setInfo }) => {
     const { register, handleSubmit, getValues } = useForm();
 
     const onSubmit = (data, id) => {
-        const url = `http://localhost:5000/information/${id}`;
+        const url = `https://fast-hollows-08764.herokuapp.com/information/${id}`;
         console.log(url);
         fetch(url, {
             method: 'PUT',
@@ -32,14 +32,14 @@ const TableData = ({ i, info, setInfo }) => {
 
     const emialsender = (information, id) => {
 
-        fetch(`http://localhost:5000/findingid?id=${id}`)
+        fetch(`https://fast-hollows-08764.herokuapp.com/findingid?id=${id}`)
             .then(res => res.json())
-            .then(result =>console.log(result)
+            .then(result => console.log(result)
             )
-                
+
 
         // post data to the new server
-        fetch(`http://localhost:5000/mailsender`, {
+        fetch(`https://fast-hollows-08764.herokuapp.com/mailsender`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -57,7 +57,7 @@ const TableData = ({ i, info, setInfo }) => {
     const handleDelete = (id) => {
 
         // delete task 
-        const url = `http://localhost:5000/information/${id}`;
+        const url = `https://fast-hollows-08764.herokuapp.com/information/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -77,7 +77,7 @@ const TableData = ({ i, info, setInfo }) => {
             <tr>
                 <th>
                     <label>
-                        <input onClick={() =>emialsender(information,_id) } type="checkbox" class="checkbox" />
+                        <input onClick={() => emialsender(information, _id)} type="checkbox" class="checkbox" />
                     </label>
                 </th>
                 <th>{_id}</th>

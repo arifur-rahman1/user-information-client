@@ -5,7 +5,7 @@ import Loading from './Loading';
 
 const Tables = () => {
     const [info, setInfo] = useState([])
-    // const {data:info,isLoading}=useQuery(['information'],()=>fetch('http://localhost:5000/information')
+    // const {data:info,isLoading}=useQuery(['information'],()=>fetch('https://fast-hollows-08764.herokuapp.com/information')
     // .then(res => res.json())
     //  )
 
@@ -13,7 +13,7 @@ const Tables = () => {
     //     return<Loading></Loading>
     // }
     useEffect(() => {
-        fetch('http://localhost:5000/information')
+        fetch('https://fast-hollows-08764.herokuapp.com/information')
             .then(res => res.json())
             .then(data => setInfo(data))
     }, [info]);
@@ -34,13 +34,13 @@ const Tables = () => {
                         </tr>
                     </thead>
                     <tbody>
-                       
+
                         {
                             info?.map(i => <TableData
-                            key={i._id}
-                            i={i}
-                            info={info}
-                            setInfo={setInfo}
+                                key={i._id}
+                                i={i}
+                                info={info}
+                                setInfo={setInfo}
                             ></TableData>)
                         }
 
