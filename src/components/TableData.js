@@ -32,25 +32,39 @@ const TableData = ({ i, info, setInfo }) => {
 
     const emialsender = (information, id) => {
 
-        fetch(`https://fast-hollows-08764.herokuapp.com/findingid?id=${id}`)
+        // 
+
+        fetch(`https://fast-hollows-08764.herokuapp.com/findingid?id=${id}}`)
             .then(res => res.json())
-            .then(result => console.log(result)
+            .then(result => {
+                const infodata =(result[0]) 
+                console.log(infodata)
+                
+
+                // 
+                // post data to the new server
+                fetch(`https://fast-hollows-08764.herokuapp.com/mailsender`, {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({infodata})
+
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                    })
+
+            }
+
+
+
+
             )
 
 
-        // post data to the new server
-        fetch(`https://fast-hollows-08764.herokuapp.com/mailsender`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(information)
 
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-            })
     }
 
 
